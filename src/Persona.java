@@ -2,6 +2,9 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 class Persona {
+
+    // Declaramos los atributos
+
     private String dni;
     private String correo;
     private String contrasena;
@@ -11,6 +14,7 @@ class Persona {
     private String codigoPostal;
     private String telefono;
     private int edad;
+
 
     @Override
     public String toString() {
@@ -24,6 +28,11 @@ class Persona {
                 "Edad: " + edad;
     }
 
+    /**
+     * Modifica el dni del objeto, comprobando si el DNI tiene 8 dígitos
+     * @param dni
+     * @return
+     */
     public boolean setDni(String dni) {
         if (dni.matches("\\d{8}")) {
             this.dni = dni;
@@ -34,6 +43,11 @@ class Persona {
         }
     }
 
+    /**
+     * Modifica el correo del objeto, comprobando si sigue el patrón establecido
+     * @param correo
+     * @return
+     */
     public boolean setCorreo(String correo) {
         String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
         Pattern pattern = Pattern.compile(regex);
@@ -47,6 +61,11 @@ class Persona {
         }
     }
 
+    /**
+     * Modifica la contraseña del objeto, comprobando si esta supera los 8 carácteres
+     * @param contrasena
+     * @return
+     */
     public boolean setContrasena(String contrasena) {
         if (contrasena.length() > 8) {
             this.contrasena = contrasena;
@@ -56,6 +75,8 @@ class Persona {
             return false;
         }
     }
+
+    // Resto de setters
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
