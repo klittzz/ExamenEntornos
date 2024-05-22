@@ -75,6 +75,21 @@ class Persona {
             return false;
         }
     }
+    
+    /**
+     * Modifica la edad del objeto, comprobando si es mayor de edad
+     * @param edad
+     * @return
+     */
+    public boolean setEdad(int edad) {
+        if (edad >= 18) {
+            this.edad = edad;
+            return true;
+        } else {
+            System.out.println("Debes ser mayor de 18 años.");
+            return false;
+        }
+    }
 
     // Resto de setters
 
@@ -98,13 +113,4 @@ class Persona {
         this.telefono = telefono;
     }
 
-    public boolean setEdad(int edad) {
-        if (edad >= 18) {
-            this.edad = edad;
-            return true;
-        } else {
-            System.out.println("Debes ser mayor de 18 años.");
-            return false;
-        }
-    }
 }
